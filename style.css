@@ -1,0 +1,274 @@
+:root {
+    --blue-1: hsl(240, 78%, 98%);
+    --blue-2: hsl(234, 14%, 74%);
+    --blue-3: hsl(233, 13%, 49%);
+    --blue-4: hsl(232, 13%, 33%);
+    --grad-1: hsl(236, 72%, 79%);
+    --grad-2: hsl(237, 63%, 64%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* min-height: 100vh; */
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    background: hsl(240, 78%, 98%);
+    display: flex;
+    font-weight: 700;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: var(--blue-4);
+    overflow-x: hidden;
+}
+
+.image-top {
+    position: absolute;
+    top: 0;
+    right: -120px;
+    height: 400px;
+}
+
+.image-bottom {
+    position: absolute;
+    display: none;
+}
+
+
+main {
+    padding: 3rem 0;
+    text-align: center;
+    z-index: 1;
+}
+
+main .top {
+    padding: 1rem 0 1rem;
+}
+
+main .top h1{
+    font-size: 1.5rem;
+    color: var(--blue-3);
+}
+
+main .top p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blue-2);
+    font-weight: 700;
+}
+
+.switch {
+    margin: 2rem 1rem;
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+  
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+  
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, hsl(236, 72%, 79%) , hsl(237, 63%, 64%));
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+  
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--blue-1);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+  
+input:checked + .slider {
+    background: linear-gradient(to right, hsl(236, 72%, 79%) , hsl(237, 63%, 64%));
+}
+ 
+input:hover + .slider {
+    background: linear-gradient(to right, hsla(236, 72%, 79%,0.5) , hsla(237, 63%, 64%,0.5));
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 inear-gradient(to right, hsl(236, 72%, 79%) , hsl(237, 63%, 64%));
+}
+  
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+  
+.slider.round {
+    border-radius: 34px;
+}
+  
+.slider.round:before {
+    border-radius: 50%;
+}
+
+main .pricing .price-template {
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+    margin-top: 2rem;
+    width: 300px;
+    padding: 1.5rem 2rem;
+    background: white;
+    border-radius: 10px;
+}
+
+main .price-template .heading{
+    padding-top: 1rem;
+    color: var(--blue-3);
+}
+
+main .price-template .price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    padding: 1rem 0;
+}
+
+main .price-template .price span{
+    font-size: 1.6rem;
+}
+
+main .price-template .details {
+    color: var(--blue-3);
+    padding: 0.8rem 0;
+    border-top: 1px solid hsla(234, 14%, 74%, 0.5);
+}
+
+main .price-template .details:nth-child(5) {
+    border-bottom: 1px solid hsla(234, 14%, 74%, 0.5);
+}
+
+main .price-template .btn {
+    color: white;
+    width: 100%;
+    padding: 0.7rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-weight: 700;
+    background: linear-gradient(to right, hsl(236, 72%, 79%) , hsl(237, 63%, 64%));
+    border: none;
+    border: 1px solid transparent;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 2rem 0 1rem;
+}
+
+main .price-template .btn:hover {
+    background: white;
+    border:  1px solid hsl(237, 63%, 64%);
+    color: hsl(237, 63%, 64%);
+} 
+
+main .price-template:nth-child(2){
+    color: white;
+    background: linear-gradient(to bottom, hsl(236, 72%, 79%) , hsl(237, 63%, 64%));
+}
+
+main .price-template:nth-child(2) .heading {
+    color: white;
+}
+
+main .price-template:nth-child(2) .details {
+    color: white;
+}
+
+main .price-template:nth-child(2) .btn {
+    background: white;
+    color: hsl(237, 63%, 64%);
+}
+
+
+main .price-template:nth-child(2) .btn:hover {
+    background: none;
+    color: white;
+    border: 1px solid white;
+}
+
+@media only screen and (min-width: 768px) {
+    body {
+        height: 100vh;
+    }
+
+    .image-top {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: auto;
+    }
+
+    .image-bottom{
+        position: absolute;
+        display: block;
+        bottom: 0;
+        left: 0;
+    }
+
+    main .top h1 {
+        font-size: 2rem;
+    }
+
+    main .switch {
+        margin: 2rem 2rem;
+    }
+
+    main .pricing{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    main .pricing .price-template {
+        width: 350px;
+        height: 450px;
+    }
+
+    main .price-template .heading {
+        font-size: 1.5rem;
+    }
+
+    main .price-template .price {
+        font-size: 4rem;
+    }
+
+    main .price-template .details {
+        font-size: 1rem;
+        padding-top: 1rem;
+    }
+
+    main .price-template:nth-child(1) {
+        border-radius: 10px 0 0 10px;
+    }
+    main .price-template:nth-child(2) {
+        height: 500px;
+        padding: 3rem;
+    }
+    main .price-template:nth-child(3) {
+        border-radius: 0 10px 10px 0;
+    }
+}
